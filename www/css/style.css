@@ -1,0 +1,50 @@
+/* Empty. Add your own CSS if you like */
+
+.splash {
+  	background: url(../img/coverPage.jpg) no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.logoImg {
+	width: 70%;
+}
+
+.branding {
+  	width: 50%;
+  	max-width: 300px;
+  	margin: 0 auto;
+  	margin-top: 120px;
+  	text-align: center;
+}
+
+.tagline {
+	color: white;
+  	font-size: 1.8rem;
+}
+
+.branding p {
+  	color: white;
+  	margin-top: 10px;
+  	font-size: 1rem;
+}
+
+
+/* this is a list of code snippet coppied from some website*/
+
+
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}

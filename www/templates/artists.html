@@ -1,0 +1,42 @@
+
+<ion-view view-title="መዘምራን">
+     
+  <ion-nav-bar class="bar-positive">
+      <!-- <ion-nav-back-button></ion-nav-back-button> -->
+	<ion-nav-buttons side="primary">
+    	<button class="button button-icon ion-navicon">
+    	</button>
+  	</ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <div class="bar bar-subheader item-input-inset bar-light">
+	  <label class="item-input-wrapper">
+	    <i class="icon ion-search placeholder-icon"></i>
+	    <input type="search" ng-model="query" placeholder=" ፈልግ">
+	  </label>
+  </div>
+
+  <ion-content class="has-subheader">
+  	<ion-list class="list">
+        <div ng-repeat="item in artists| filter: query">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(item)"
+                    ng-class="{active: isGroupShown(item)}">
+              <i class="icon" ng-class="isGroupShown(item) ? 'ion-arrow-down-b' : 'ion-arrow-right-b'"></i>
+            &nbsp;
+            {{item.name}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="subitem in albumSubOption| filter:{which_singer: item.id}"
+                    ng-show="isGroupShown(item)"
+                    href="#/artists/{{subitem.album_id}}">
+            {{subitem.album_title}}
+          </ion-item>
+        </div>
+      </ion-list>
+  </ion-content>
+
+
+</ion-view>
+
