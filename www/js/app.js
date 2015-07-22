@@ -21,6 +21,23 @@ lyricsApp.run(function($ionicPlatform) {
 
 lyricsApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+  
+//     --------------------------------             //
+
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html'
+  })
+
+
+
+
+
+
+
+//           ------------------------              //
+
   .state('pages', {
     url: '/page',
     // abstract: true,
@@ -28,22 +45,43 @@ lyricsApp.config(function($stateProvider, $urlRouterProvider) {
     controller: 'HomeController'
   })
 
-  .state('artists', {
+  .state('app.artists', {
     url: '/artists',
-    templateUrl: 'templates/artists.html',      
-    controller: 'ArtistsController'
+    views: {
+        'menuContent': {
+          templateUrl: 'templates/artists.html',      
+          controller: 'ArtistsController'        
+        }
+    }
   })
 
-  .state('songs', {
+  .state('app.songs', {
     url: '/artists/:albumId',
-    templateUrl: 'templates/songs.html',      
-    controller: 'SongsController'
+    views: {
+        'menuContent': {
+          templateUrl: 'templates/songs.html',      
+          controller: 'SongsController'        
+        }
+    }
   })
 
-  .state('content', {
+  .state('app.content', {
     url: '/artists/:albumId/:songId',
-    templateUrl: 'templates/lyrics.html',      
-    controller: 'ContentController'
+    views: {
+        'menuContent': {
+          templateUrl: 'templates/lyrics.html',      
+          controller: 'ContentController'        
+        }
+    }
+  })
+
+  .state('app.about', {
+    url: '/about',
+    views: {
+      'menuContent' : {
+        templateUrl: 'templates/about.html',
+      }
+    }
   })
 
   .state('loading', {
@@ -61,7 +99,6 @@ lyricsApp.controller('ContentController', function($scope, $state, $cordovaSQLit
   var qry = "SELECT song_id, song_title, song_content FROM songs WHERE song_id == ?";
   $cordovaSQLite.execute(db, qry, [$scope.songId]).then(function(r) {
     if(r.rows.length == 1){
-      console.log(r.rows[0].song_content);
       $scope.songContent = r.rows[0].song_content;
     } 
   }, function(error) {
@@ -105,7 +142,7 @@ lyricsApp.controller('LoadingController', function($scope, $ionicLoading, $ionic
         tx.executeSql("INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Yibezhegnal", 1]);
         tx.executeSql("INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Ewedihalew", 2]);
         tx.executeSql("INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Bemihiretu", 2]);
-        tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Biswal Misganaye", "Amazing Grace, how sweet the sound", 1]);
+        tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Biswal Misganaye", "Amazing Grace how sweet the sound", 1]);
         tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Arbegna Negn","T'was Grace that taught my heart to fear", 1]);
         tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Kidisina","Through many dangers, toils and snares", 1]);
         tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Tilik Neh","God is fighting for us", 4]);

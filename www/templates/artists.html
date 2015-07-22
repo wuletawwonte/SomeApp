@@ -1,15 +1,6 @@
 
 <ion-view view-title="መዘምራን">
      
-  <ion-nav-bar class="bar-positive">
-      <!-- <ion-nav-back-button></ion-nav-back-button> -->
-	<ion-nav-buttons side="primary">
-    	<button class="button button-icon ion-navicon">
-    	</button>
-  	</ion-nav-buttons>
-
-  </ion-nav-bar>
-
   <div class="bar bar-subheader item-input-inset bar-light">
 	  <label class="item-input-wrapper">
 	    <i class="icon ion-search placeholder-icon"></i>
@@ -30,7 +21,7 @@
           <ion-item class="item-accordion"
                     ng-repeat="subitem in albumSubOption| filter:{which_singer: item.id}"
                     ng-show="isGroupShown(item)"
-                    href="#/artists/{{subitem.album_id}}">
+                    href="#/app/artists/{{subitem.album_id}}">
             {{subitem.album_title}}
           </ion-item>
         </div>
