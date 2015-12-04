@@ -53,27 +53,6 @@
 
 
 
-DROP TABLE IF EXISTS singers;
-DROP TABLE IF EXISTS albums;
-    DROP TABLE IF EXISTS songs; 
-    CREATE TABLE IF NOT EXISTS singers(singer_id integer primary key, singer_name text);
-    CREATE TABLE IF NOT EXISTS albums(album_id integer primary key, album_title text, which_singer integer);
-    CREATE TABLE IF NOT EXISTS songs(song_id integer primary key, song_title text, song_content text, which_album integer);
-    INSERT INTO singers(singer_name) VALUES ("Endale Woldegiorgis");
-    INSERT INTO singers(singer_name) VALUES ("Dawit Getachew");
-    INSERT INTO singers(singer_name) VALUES ("Lili Tilahun");
-    INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Yewengel Arbegna", 1]);
-    INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Metsnagnaye", 1]);
-    INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Yibezhegnal", 1]);
-     INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Ewedihalew", 2]);
-     INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Bemihiretu", 2]);
-     INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Biswal Misganaye", "Amazing Grace how sweet the sound", 1]);
-     INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Arbegna Negn","T'was Grace that taught my heart to fear", 1]);
-     INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Kidisina","Through many dangers, toils and snares", 1]);
-     INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Tilik Neh","God is fighting for us", 4]);
-     INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Keadman Bashager","Yes, He has overcome", 4]);
-     INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Zelalem Ayitefam","God is fighting for us", 4]);
-     INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Biswal Misganaye","We will not be shaken", 5]);
 
 
 

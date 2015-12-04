@@ -25,6 +25,10 @@
     }
   ],
   "cordovaPlatforms": [
-    "android"
+    {
+      "platform": "android",
+      "version": "3.6.4",
+      "locator": "android@3.6.4"
+    }
   ]
 }

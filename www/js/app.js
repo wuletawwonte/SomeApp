@@ -22,7 +22,6 @@ lyricsApp.run(function($ionicPlatform) {
 lyricsApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   
-//     --------------------------------             //
 
   .state('app', {
     url: '/app',
@@ -30,13 +29,6 @@ lyricsApp.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/menu.html'
   })
 
-
-
-
-
-
-
-//           ------------------------              //
 
   .state('pages', {
     url: '/page',
@@ -142,7 +134,7 @@ lyricsApp.controller('LoadingController', function($scope, $ionicLoading, $ionic
         tx.executeSql("INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Yibezhegnal", 1]);
         tx.executeSql("INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Ewedihalew", 2]);
         tx.executeSql("INSERT INTO albums(album_title, which_singer) VALUES (?, ?)", ["Bemihiretu", 2]);
-        tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Biswal Misganaye", "Amazing Grace how sweet the sound", 1]);
+        tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Biswal Misganaye", "Amazing Grace <br> how sweet the sound", 1]);
         tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Arbegna Negn","T'was Grace that taught my heart to fear", 1]);
         tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Kidisina","Through many dangers, toils and snares", 1]);
         tx.executeSql("INSERT INTO songs(song_title, song_content, which_album) VALUES (?,?,?)", ["Tilik Neh","God is fighting for us", 4]);
